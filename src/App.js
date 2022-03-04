@@ -25,7 +25,7 @@ function getToken() {
   let expiration = new Date(data.timestamp);
   expiration.setMinutes(expiration.getMinutes() + 120);
   if(now.getTime() > expiration.getTime()){
-    localStorage.setItem('token', JSON.stringify({timestamp: new Date(),content:false}));
+   let userToken = localStorage.setItem('token', JSON.stringify({timestamp: new Date(),content:false}));
     return userToken
   }
   const userToken = JSON.parse(tokenString);
